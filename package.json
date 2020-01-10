@@ -1,0 +1,28 @@
+{
+  "name": "node-postgres-example",
+  "version": "1.0.0",
+  "description": "Node and Containerized PostgreSQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carterbancroft/node-postgres-example.git"
+  },
+  "author": "Carter Bancroft",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/carterbancroft/node-postgres-example/issues"
+  },
+  "homepage": "https://github.com/carterbancroft/node-postgres-example#readme",
+  "dependencies": {
+    "node-pg-migrate": "^4.2.1",
+    "pg": "^7.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "mocha": "^7.0.0",
+    "nodemon": "^2.0.2"
+  }
+}
