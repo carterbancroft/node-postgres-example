@@ -4,7 +4,18 @@
   "description": "Node and Containerized PostgreSQL",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "NODE_ENV=${NODE_ENV:-unit_testing} mocha --recursive --colors",
+    "test:only": "NODE_ENV=${NODE_ENV:-unit_testing} mocha --recursive --colors",
+    "start": "NODE_ENV=${NODE_ENV:-development} node index.js",
+    "watch": "nodemon --exec 'npm test && npm start'",
+    "migrate": "node-pg-migrate",
+    "dbup": "docker-compose up -d",
+    "dbdown": "docker-compose down",
+    "dblogs": "docker logs -f postgres_example",
+    "dbcli": "docker exec -it postgres_example psql -d postgres_example_development -U postgres",
+    "initdb": "./scripts/initdb"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo "Destroying any running PostgreSQL containers..."
+docker-compose down
+echo
+
+echo "Setting up PostgreSQL Docker containers..."
+docker-compose up -d
+echo
+
+echo "Creating databases..."
+docker exec -it postgres_example psql -U postgres -c "create database postgres_example_development"
+docker exec -it postgres_example psql -U postgres -c "create database postgres_example_unit_testing"
+echo
+
+echo "Running migrations..."
+DATABASE_URL=postgres://postgres@localhost:5432/postgres_example_development npm run migrate up
+DATABASE_URL=postgres://postgres@localhost:5432/postgres_example_unit_testing npm run migrate up
+echo

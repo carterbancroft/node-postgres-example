@@ -1,0 +1,11 @@
+version: "3"
+services:
+  db:
+    image: "postgres:12"
+    container_name: "postgres_example"
+    ports:
+      - "5432:5432"
+    volumes:
+      - my_data:/var/lib/postgresql/data
+volumes:
+  my_data:
