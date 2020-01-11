@@ -9,6 +9,7 @@ This repo includes:
 - A database configuration using `pg`
 - A Mocha unit test example queying the containerized database
 - A simplified, reusable, initdb script to get you running in a jiffy
+- Distinct database configurations for unit tests and your development environment
 - Useful NPM scripts
 
 ## Requirements
