@@ -19,7 +19,7 @@ This repo includes:
 ## Setup
 ```
 $ npm install
-$ npm initdb
+$ npm run initdb
 ```
 
 ## Running Tests
